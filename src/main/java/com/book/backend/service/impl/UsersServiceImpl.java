@@ -133,6 +133,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
         String password = users.getPassword();
         String saltPass = SALT+password;
         String encryptPass = DigestUtils.md5DigestAsHex(saltPass.getBytes());
+        System.out.println(encryptPass);
         if (!encryptPass.equals(user.getPassword())) {
             System.out.println(user.getPassword());
             result.setStatus(404);

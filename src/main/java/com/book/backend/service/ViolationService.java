@@ -22,10 +22,5 @@ public interface ViolationService extends IService<Violation> {
      * @return R<Page < ViolationDTO>>
      */
     R<Page<ViolationDTO>> getViolationListByPage( BasePage basePage);
-    /**
-     * 获取借阅量
-     *
-     * @return R<BorrowData>
-     */
-    R<BorrowData> getBorrowDate();
+
 }

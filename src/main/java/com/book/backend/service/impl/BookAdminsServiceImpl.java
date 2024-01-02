@@ -37,7 +37,7 @@ public class BookAdminsServiceImpl extends ServiceImpl<BookAdminsMapper, BookAdm
     /**
      * 盐值，混淆密码
      */
-    private static final String SALT = "xiaobaitiao";
+    private static final String SALT = "QiuQiu";
     @Resource
     private JwtKit jwtKit;
 
@@ -96,7 +96,10 @@ public class BookAdminsServiceImpl extends ServiceImpl<BookAdminsMapper, BookAdm
             return R.error("该图书管理员已被禁用");
         }
         String password = users.getPassword();
-        if (!password.equals(bookAdminOne.getPassword())) {
+        String saltPass = SALT+password;
+        String encryptPass = DigestUtils.md5DigestAsHex(saltPass.getBytes());
+        System.out.println(encryptPass);
+        if (!encryptPass.equals(bookAdminOne.getPassword())) {
             result.setStatus(404);
             return R.error("用户名或密码错误");
         }

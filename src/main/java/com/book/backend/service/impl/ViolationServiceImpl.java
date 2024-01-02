@@ -135,39 +135,7 @@ public class ViolationServiceImpl extends ServiceImpl<ViolationMapper, Violation
         return result;
     }
 
-    /**
-     * 1.分别获取5个时间节点，计算四个间隔之间的借阅量，也就是一周的借阅量
-     * 2.时间格式化 然后封装到BorrowDate的日期数组中 再分别封装借阅量
-     * 3.返回前端
-     */
-    @Override
-    public R<BorrowData> getBorrowDate() {
-        LocalDateTime now = LocalDateTime.now();
-        String[] dateArray = BorrowDateUtil.getDateArray(now);
-        LocalDateTime time1 = now.minusWeeks(1);
-        LocalDateTime time2 = now.minusWeeks(2);
-        LocalDateTime time3 = now.minusWeeks(3);
-        LocalDateTime time4 = now.minusWeeks(4);
-        LambdaQueryWrapper<Violation> queryWrapper1 = new LambdaQueryWrapper<>();
-        queryWrapper1.between(Violation::getBorrowDate, time1, now);
-        LambdaQueryWrapper<Violation> queryWrapper2 = new LambdaQueryWrapper<>();
-        queryWrapper2.between(Violation::getBorrowDate, time2, time1);
-        LambdaQueryWrapper<Violation> queryWrapper3 = new LambdaQueryWrapper<>();
-        queryWrapper3.between(Violation::getBorrowDate, time3, time2);
-        LambdaQueryWrapper<Violation> queryWrapper4 = new LambdaQueryWrapper<>();
-        queryWrapper4.between(Violation::getBorrowDate, time4, time3);
-        List<Violation> list1 = this.list(queryWrapper1);
-        List<Violation> list2 = this.list(queryWrapper2);
-        List<Violation> list3 = this.list(queryWrapper3);
-        List<Violation> list4 = this.list(queryWrapper4);
-        Integer[] borrowNumbers = new Integer[4];
-        borrowNumbers[3] = list1.size();
-        borrowNumbers[1] = list2.size();
-        borrowNumbers[2] = list3.size();
-        borrowNumbers[0] = list4.size();
-        BorrowData borrowData = new BorrowData(dateArray, borrowNumbers);
-        return R.success(borrowData, "获取借阅量成功");
-    }
+
 }
 
 

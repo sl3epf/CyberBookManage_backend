@@ -42,7 +42,7 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins>
     /**
      * 盐值，混淆密码
      */
-    private static final String SALT = "xiaobaitiao";
+    private static final String SALT = "QiuQiu";
     @Resource
     private UsersService usersService;
     @Resource
@@ -112,7 +112,11 @@ public class AdminsServiceImpl extends ServiceImpl<AdminsMapper, Admins>
             return R.error("该系统管理员已被禁用");
         }
         String password = users.getPassword();
-        if (!password.equals(adminOne.getPassword())) {
+        System.out.println(password);
+        String saltPass = SALT+password;
+        String encryptPass = DigestUtils.md5DigestAsHex(saltPass.getBytes());
+        System.out.println(encryptPass);
+        if (!encryptPass.equals(adminOne.getPassword())) {
             result.setStatus(404);
             return R.error("用户名或密码错误");
         }

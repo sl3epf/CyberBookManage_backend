@@ -321,16 +321,7 @@ public class AdminFunctionController {
     public R<String> updateBookAdmin(@RequestBody BookAdmins bookAdmins) {
         return bookAdminsService.updateBookAdmin(bookAdmins);
     }
-
-    /**
-     * 获取借阅量
-     *
-     * @return R<BorrowData>
-     */
-    @GetMapping("get_borrowdata")
-    public R<BorrowData> getBorrowDate() {
-        return violationService.getBorrowDate();
-    }
+    
 
     /**
      * 获取借书分类统计情况
