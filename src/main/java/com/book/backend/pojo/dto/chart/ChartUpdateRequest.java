@@ -12,7 +12,7 @@ import java.util.Date;
  * 更新请求
  *
  * 
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
+ * 
  */
 @Data
 public class ChartUpdateRequest implements Serializable {

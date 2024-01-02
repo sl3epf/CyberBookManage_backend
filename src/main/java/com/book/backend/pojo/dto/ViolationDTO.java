@@ -6,7 +6,6 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 
  *  DTO用于将管理员昵称传输
  */
 @Data

@@ -14,10 +14,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 
-/**
- * 
- * @from <a href="https://luoye6.github.io/"> 个人博客
- */
+
 //  取消注释后，每次执行springboot项目，都会执行一次run方法
 //@Component
 public class EasyExcelBatchImportBookList implements CommandLineRunner {

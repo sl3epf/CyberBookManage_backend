@@ -4,10 +4,6 @@ import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-/**
- * 
- * @from <a href="https://luoye6.github.io/"> 个人博客
- */
 @Service
 @Slf4j
 public class GuavaRateLimiterManager {

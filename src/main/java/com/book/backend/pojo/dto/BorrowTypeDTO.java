@@ -2,10 +2,6 @@ package com.book.backend.pojo.dto;
 
 import lombok.Data;
 
-/**
- * 
- * @from <a href="https://luoye6.github.io/"> 个人博客
- */
 @Data
 public class BorrowTypeDTO {
     /**
