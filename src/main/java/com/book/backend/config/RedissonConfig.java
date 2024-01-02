@@ -1,9 +1,5 @@
 package com.book.backend.config;
 
-/**
- * 
- * @from <a href="https://luoye6.github.io/"> 个人博客
- */
 import lombok.Data;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;

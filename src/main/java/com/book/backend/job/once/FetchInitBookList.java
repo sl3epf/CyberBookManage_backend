@@ -17,10 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 
- * @from <a href="https://luoye6.github.io/"> 个人博客
- */
 //  取消注释后，每次执行springboot项目，都会执行一次run方法
 //@Component
 @Slf4j
