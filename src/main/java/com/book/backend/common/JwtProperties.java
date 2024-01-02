@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * JWT配置类，读取Application.yml中的配置
  *
- * @author AdminMall
+ * 
  */
 @Component
 @Data

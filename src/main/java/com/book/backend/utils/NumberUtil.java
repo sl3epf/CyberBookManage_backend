@@ -2,9 +2,7 @@ package com.book.backend.utils;
 import java.math.BigDecimal;
 import java.util.Random;
 
-/**
- * @author 赵天宇
- */
+
 public class NumberUtil {
     public static Integer getLibraryInt(){
         return new Random().nextInt(3);

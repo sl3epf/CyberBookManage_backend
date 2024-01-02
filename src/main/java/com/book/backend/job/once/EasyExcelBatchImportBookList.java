@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 
 /**
- * @author <a href="https://github.com/luoye6">小白条
+ * 
  * @from <a href="https://luoye6.github.io/"> 个人博客
  */
 //  取消注释后，每次执行springboot项目，都会执行一次run方法

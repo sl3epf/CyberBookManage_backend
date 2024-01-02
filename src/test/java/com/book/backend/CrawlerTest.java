@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * @author <a href="https://github.com/luoye6">小白条
+ * 
  * @from <a href="https://luoye6.github.io/"> 个人博客
  */
 @SpringBootTest

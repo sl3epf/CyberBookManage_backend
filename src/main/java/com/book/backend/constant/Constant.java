@@ -1,7 +1,7 @@
 package com.book.backend.constant;
 
 /**
- * @author 赵天宇
+ * 
  * 常量类
  * 防止魔法值
  */
