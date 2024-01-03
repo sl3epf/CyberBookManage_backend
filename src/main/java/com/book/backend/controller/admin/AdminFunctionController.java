@@ -6,8 +6,6 @@ import com.book.backend.common.BasePage;
 import com.book.backend.common.R;
 import com.book.backend.pojo.*;
 import com.book.backend.pojo.dto.*;
-import com.book.backend.pojo.dto.chart.GenChartByAiRequest;
-import com.book.backend.pojo.vo.BiResponse;
 import com.book.backend.service.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,8 +34,6 @@ public class AdminFunctionController {
 
     @Resource
     private AdminsService adminsService;
-    @Resource
-    private ChartService chartService;
 
     /**
      * 获取图书列表
@@ -357,15 +353,4 @@ public class AdminFunctionController {
         return adminsService.upload(file);
     }
 
-    /**
-     * 根据用户输入信息，生成图表
-     * @param multipartFile 文件
-     * @param genChartByAiRequest 用户输入信息(分析目标,图标类型，名称),用户id
-     * @return R<BiResponse>
-     */
-    @PostMapping("/gen")
-    public R<BiResponse> genChartByAi(@RequestPart("file") MultipartFile multipartFile,
-                                                 GenChartByAiRequest genChartByAiRequest) {
-        return chartService.genChartByAi(multipartFile,genChartByAiRequest);
-    }
 }
