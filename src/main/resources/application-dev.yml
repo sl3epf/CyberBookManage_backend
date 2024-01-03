@@ -5,9 +5,9 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     # 配置连接数据库信息
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/bms_boot?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/cyber_book?characterEncoding=utf8&useSSL=false
     username: root
-    password: qqw@2024.com
+    password: lps123456
 server:
   port: 8889 #配置后端接口的端口号
   servlet: #配置后端请求的根路径  http://127.0.0.1:8889/api
