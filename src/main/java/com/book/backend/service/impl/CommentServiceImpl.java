@@ -64,9 +64,18 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment>
     public R<String> addComment(CommentDTO commentDTO) {
 
         String[] barrageStyleArrays = {"yibai", "erbai", "sanbai", "sibai", "wubai", "liubai", "qibai", "babai", "jiubai", "yiqian"};
+        String[] barrageAvatarArrays = {"https://robohash.org/19330234251",
+                "https://robohash.org/19330234252",
+                "https://robohash.org/19330234253",
+                "https://robohash.org/19330234254",
+                "https://robohash.org/19330234255",
+                "https://robohash.org/19330234256",
+                "https://robohash.org/19330234257",
+                "https://robohash.org/19330234258",
+                "https://robohash.org/19330234259",
+                "https://robohash.org/19330234250"};
         Comment comment = new Comment();
         comment.setCommentId(null);
-        comment.setCommentAvatar("https://img0.baidu.com/it/u=825023390,3429989944&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500");
         comment.setCommentTime(NumberUtil.getBarrageTime());
         comment.setCommentMessage(commentDTO.getMsg());
         long index = Math.round(Math.random() * 10);
@@ -77,6 +86,7 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment>
         String s = Long.toString(index);
         int newIndex = Integer.parseInt(s);
         comment.setCommentBarrageStyle(barrageStyleArrays[newIndex]);
+        comment.setCommentAvatar(barrageAvatarArrays[newIndex]);
         boolean flag = this.save(comment);
         if (!flag) {
             return R.error("添加弹幕失败");
