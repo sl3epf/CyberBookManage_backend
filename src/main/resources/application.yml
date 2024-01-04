@@ -28,13 +28,12 @@ mybatis-plus:
 knife4j:
   enable: true
   openapi:
-    title: "图书管理系统后台接口文档"
-    description: "vue_book_backend"
-    # aaa"
+    title: "赛博图书管理系统后台接口文档"
+    description: "cyber_book_backend"
+
     version: "1.0"
     license: Apache 2.0
     license-url: https://stackoverflow.com/
-    terms-of-service-url: https://abc.xiaobaitiao.club
     group:
       test1:
         group-name: default
